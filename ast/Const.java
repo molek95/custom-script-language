@@ -1,9 +1,9 @@
 package ast;
 
-public class Constant extends Expression {
+public class Const extends Expression {
     private double value;
 
-    public Constant(String value) {
+    public Const(String value) {
         this.value = Double.parseDouble(value);
     }
 
