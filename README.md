@@ -1,0 +1,2 @@
+- `make run1` paranccsal lehet futtatni és fordítani. Ilyenkor az `input.txt` fájlban lévő "scriptnyelvet" fogja értelmezni
+- `make clean` paranccsal törölhetőek a generált .class fájlok
