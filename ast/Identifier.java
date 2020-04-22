@@ -7,7 +7,11 @@ public class Identifier extends Expression {
         this.name = name;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public double evaluate() {
-        return 0;
+        return Program.ids.get(name);
     }
 }

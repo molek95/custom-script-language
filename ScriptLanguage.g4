@@ -26,7 +26,7 @@ command returns [ast.Expression value]:
     | e1 = declaration SEMICOLON {$value = $e1.value;}
     | PRINT LPAR {$value = new ast.Print(); }
         exp1 = exp {((ast.Print)$value).addExpression($exp1.value);}
-        (COMMA exp2 = exp {((ast.Print)$value).addExpression($exp2.ertek); })*
+        (COMMA exp2 = exp {((ast.Print)$value).addExpression($exp2.value); })*
         RPAR SEMICOLON
     | controlStructures {$value = $controlStructures.value;}
 ;
@@ -41,24 +41,24 @@ controlStructures returns [ ast.Expression value ]:
 
 if returns [ast.Expression value]:
     IF fstop=exp {$value = new ast.If($fstop.value);}
-        LBRACE (nxtop=fct {((ast.If)$value).doExpression($nxtop.value);})+ RBRACE
-        (ELSE LBRACE (nxtop2=fct {((ast.If)$value).elseExpression($nxtop2.value);})*)? RBRACE
+        LBRACE (nxtop=fct {((ast.If)$value).addDoExpression($nxtop.value);})+ RBRACE
+        (ELSE LBRACE (nxtop2=fct {((ast.If)$value).addElseExpression($nxtop2.value);})*)? RBRACE
 ;
 
 shortIf returns [ast.Expression value]:
-    LPAR fstop=exp {$value = new ast.If($fstop.vaue);}
-        LBRACE (nxtop=fct {((ast.If)$value).doExpression($nxtop.value);})+ RBRACE
-        (ELSE LBRACE (nxtop2=fct {((ast.If)$value).elseExpression($nxtop2.value);})*)? RBRACE
+    LPAR fstop=exp {$value = new ast.If($fstop.value);}
+        LBRACE (nxtop=fct {((ast.If)$value).addDoExpression($nxtop.value);})+ RBRACE
+        (ELSE LBRACE (nxtop2=fct {((ast.If)$value).addElseExpression($nxtop2.value);})*)? RBRACE
 ;
 
 switchCase returns [ast.Expression value]:
     SWITCH LPAR VARNAME { $value=new ast.SwitchCase($VARNAME.text); } RPAR SEMICOLON LBRACE
     (CASE fstop=fct {((ast.SwitchCase)$value).addCase($fstop.value);} SEMICOLON
-        (nxtop=command {((ast.SwitchCase)$value).doExpression($fstop.value, $nxtop.value);})*
+        (nxtop=command {((ast.SwitchCase)$value).addDoExpression($fstop.value, $nxtop.value);})*
     )+
     BREAK SEMICOLON
     (DEFAULT SEMICOLON
-        (nxtop2=command {((ast.SwitchCase)$value).elseExpression($nxtop);})*
+        (nxtop2=command {((ast.SwitchCase)$value).addElseExpression($nxtop);})*
     )
     BREAK SEMICOLON RBRACE
 ;
