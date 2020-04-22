@@ -4,9 +4,9 @@ public class Assignment extends Expression {
     private Identifier id;
     private Expression exp;
 
-    public Assignment(Identifier) {
+    public Assignment(Identifier id) {
         this.id = id;
-        this.exp = new Const("0")
+        this.exp = new Const("0");
     }
 
     public Assignment(Identifier id, Expression exp) {

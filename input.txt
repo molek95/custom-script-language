@@ -1,0 +1,59 @@
+int starttime;
+int sum;
+starttime = TIME;
+sum = 0;
+for (x=0;x<1000;x=x+1) {
+  sum = sum + x;
+}
+print(sum);
+print(TIME-starttime);
+
+for(int i = 0; i<5; i=i+0.5){
+print(i);
+}
+
+double starttime;
+starttime = TIME;
+print(starttime);
+
+double t;
+t=6;
+print(t);
+
+while(t>0){
+print(t);
+t = t-1;
+if(t>0) {
+print(5698);
+} else {
+print(2598);
+}
+}
+
+if(starttime>TIME) {
+print(0.555555);
+} else {
+print(0.4444);
+}
+
+int k;
+k = ABS(7-90.56);
+print(k+6);
+
+k=0;
+switch(k): {
+case 0:
+print(0);
+break;
+default:
+print(k);
+break;
+}
+
+int hull = 52;
+
+print(hull, k);
+
+int rovid = 4;
+print(rovid);
+(rovid/3==1) ? (print(11111);) : (print(222222);)

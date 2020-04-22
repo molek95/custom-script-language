@@ -5,32 +5,32 @@ import java.util.ArrayList;
 
 public class If extends Expression {
 
-    private Expression boolExp;
-    private List<Expression> doExp = new ArrayList<Expression>();
-    private List<Expression> elseExp = new ArrayList<Expression>();
+	private Expression booleanExpr;
+	private List<Expression> doExpr = new ArrayList<Expression>();
+	private List<Expression> elseExpr = new ArrayList<Expression>();
+	
+	public If(Expression b) {
+		this.booleanExpr = b;
+	}
+	
+	public void addDoExpression(Expression expr) {
+		doExpr.add(expr);
+	}
+	
+	public void addElseExpression(Expression expr) {
+		elseExpr.add(expr);
+	}
+		
+	public double evaluate() {
+		if(booleanExpr.evaluate() != 0) {
+			for (Expression expr : doExpr)
+                 expr.evaluate();
+		}
+		else {
+		    for (Expression expr : elseExpr)
+                 expr.evaluate();
+		}
+		return 0;
+	}
 
-    public If(Expression boolnExp) {
-        this.boolExp = boolExp;
-    }
-
-    public addDoExpression(Expression exp) {
-        doExp.add(exp);
-    }
-
-    public addElseExpression(Expression exp) {
-        elseExp.add(exp);
-    }
-
-    public double evaluate() {
-        if (boolExp.evaluate() != 0) {
-            for (Expression exp : doExp) {
-                exp.evaluate();
-            }
-        } else {
-            for (Expression exp : elseExp) {
-                exp.evaluate();
-            }
-        }
-        return 0;
-    }
 }

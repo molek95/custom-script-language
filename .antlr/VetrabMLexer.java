@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class ScriptLanguageLexer extends Lexer {
+public class VetrabMLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -87,14 +87,14 @@ public class ScriptLanguageLexer extends Lexer {
 	    private java.util.Map<String,Double> ids = new java.util.TreeMap<String,Double>();
 	    
 	    public static void main(String[] args) throws Exception {
-	        ScriptLanguageLexer lex = new ScriptLanguageLexer(new ANTLRFileStream(args[0]));
-	        CommonTokenStream tokens = new CommonTokenStream(lex);
-	        ScriptLanguageParser parser = new ScriptLanguageParser(tokens);
+	        VetrabMLexer lex = new VetrabMLexer(new ANTLRFileStream(args[0]));
+	              	CommonTokenStream tokens = new CommonTokenStream(lex);
+	        VetrabMParser parser = new VetrabMParser(tokens);
 	        parser.program();
 	    }
 
 
-	public ScriptLanguageLexer(CharStream input) {
+	public VetrabMLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}

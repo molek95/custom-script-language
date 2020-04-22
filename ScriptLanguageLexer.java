@@ -1,4 +1,4 @@
-// Generated from /home/adam/projects/fordito/script-language/custom-script-language/ScriptLanguage.g4 by ANTLR 4.7.1
+// Generated from ScriptLanguage.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ScriptLanguageLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -29,27 +29,36 @@ public class ScriptLanguageLexer extends Lexer {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] ruleNames = {
-		"PRINT", "ABS", "TIME", "INT", "DOUBLE", "FOR", "WHILE", "BREAK", "CONTINUE", 
-		"IF", "THEN", "ELSE", "SWITCH", "CASE", "DEFAULT", "SEMICOLON", "ADD", 
-		"SUB", "MUL", "DIV", "LPAR", "RPAR", "LBRACE", "RBRACE", "KERDOJEL", "ASSIGN", 
-		"EQUALS", "LESSTHEN", "GREATERTHEN", "COLON", "COMMA", "VARNAME", "NUMBER", 
-		"WHITESPACE", "NEWLINE"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"PRINT", "ABS", "TIME", "INT", "DOUBLE", "FOR", "WHILE", "BREAK", "CONTINUE", 
+			"IF", "THEN", "ELSE", "SWITCH", "CASE", "DEFAULT", "SEMICOLON", "ADD", 
+			"SUB", "MUL", "DIV", "LPAR", "RPAR", "LBRACE", "RBRACE", "KERDOJEL", 
+			"ASSIGN", "EQUALS", "LESSTHEN", "GREATERTHEN", "COLON", "COMMA", "VARNAME", 
+			"NUMBER", "WHITESPACE", "NEWLINE"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'print'", "'ABS'", "'TIME'", "'int'", "'double'", "'for'", "'while'", 
-		"'break'", "'continue'", "'if'", "'then'", "'else'", "'switch'", "'case'", 
-		"'default'", "';'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'{'", "'}'", 
-		"'?'", "'='", "'=='", "'<'", "'>'", "':'", "','"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, "PRINT", "ABS", "TIME", "INT", "DOUBLE", "FOR", "WHILE", "BREAK", 
-		"CONTINUE", "IF", "THEN", "ELSE", "SWITCH", "CASE", "DEFAULT", "SEMICOLON", 
-		"ADD", "SUB", "MUL", "DIV", "LPAR", "RPAR", "LBRACE", "RBRACE", "KERDOJEL", 
-		"ASSIGN", "EQUALS", "LESSTHEN", "GREATERTHEN", "COLON", "COMMA", "VARNAME", 
-		"NUMBER", "WHITESPACE", "NEWLINE"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'print'", "'ABS'", "'TIME'", "'int'", "'double'", "'for'", "'while'", 
+			"'break'", "'continue'", "'if'", "'then'", "'else'", "'switch'", "'case'", 
+			"'default'", "';'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'{'", 
+			"'}'", "'?'", "'='", "'=='", "'<'", "'>'", "':'", "','"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, "PRINT", "ABS", "TIME", "INT", "DOUBLE", "FOR", "WHILE", "BREAK", 
+			"CONTINUE", "IF", "THEN", "ELSE", "SWITCH", "CASE", "DEFAULT", "SEMICOLON", 
+			"ADD", "SUB", "MUL", "DIV", "LPAR", "RPAR", "LBRACE", "RBRACE", "KERDOJEL", 
+			"ASSIGN", "EQUALS", "LESSTHEN", "GREATERTHEN", "COLON", "COMMA", "VARNAME", 
+			"NUMBER", "WHITESPACE", "NEWLINE"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**
